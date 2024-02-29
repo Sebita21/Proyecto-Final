@@ -1,0 +1,10 @@
+.cardContainer {
+  transition: transform 0.3s;
+}
+
+.cardContainer:hover {
+  transform: scale(1.1);
+}
+.cardContainer .card-body h6 {
+  text-transform: capitalize; 
+}
