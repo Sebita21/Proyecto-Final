@@ -67,7 +67,7 @@ const ShoppingCartDisplay = () => {
                           src={cartItem.item.image}
                           alt={cartItem.item.title}
                           className="img-thumbnail"
-                          style={{ width: "100px", height: "100px" }}
+                          style={{ maxWidth: "100px", maxHeight: "100px" }}
                         />
                       </td>
                       <td className="text-center align-middle">
@@ -91,10 +91,10 @@ const ShoppingCartDisplay = () => {
                           <span className="d-flex align-items-center">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="20 "
+                              width="20"
                               height="20"
                               fill="currentColor"
-                              class="bi bi-trash-fill"
+                              className="bi bi-trash-fill"
                               viewBox="0 0 16 16"
                             >
                               <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
@@ -109,27 +109,19 @@ const ShoppingCartDisplay = () => {
             </div>
           </div>
           <div className="col-md col-lg-3 mb-4">
-            <table className="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <div className="card" style={{ height: "auto" }}>
-                      <div className="card-body">
-                        <h5 className="card-title">Total a Pagar</h5>
-                        <p className="card-text">${total}</p>
-                        <NavLink
-                          to="/registro"
-                          className="btn btn-primary btn-md rounded ml-2"
-                          style={{ backgroundColor: "#003366" }}
-                        >
-                          Finalizar Compra
-                        </NavLink>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="card" style={{ height: "auto", minHeight: "150px" }}>
+              <div className="card-body">
+                <h5 className="card-title">Total a Pagar</h5>
+                <p className="card-text">${total}</p>
+                <NavLink
+                  to="/registro"
+                  className="btn btn-primary btn-md rounded ml-2"
+                  style={{ backgroundColor: "#003366" }}
+                >
+                  Finalizar Compra
+                </NavLink>
+              </div>
+            </div>
           </div>
         </div>
       )}

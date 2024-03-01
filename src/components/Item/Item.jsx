@@ -4,15 +4,10 @@ import styles from "./Item.module.css";
 
 const Item = ({ id, imagen, precio, titulo }) => {
   return (
-    <div className="col-md-4 mb-3">
+    <div className={`col-md-4 mb-3 ${styles.cardContainer}`}>
       <div
-        className={`card border-0 shadow mb-3 ${styles.cardContainer}`}
-        style={{
-          maxWidth: "400px",
-          margin: "auto",
-          backgroundColor: "#001F3F",
-          color: "#fff",
-        }}
+        className={`card border-0 shadow ${styles.card} mx-auto`} // Agregando la clase mx-auto para centrar el card
+        style={{ maxWidth: "300px" }} // Ajusta el ancho máximo según tus necesidades
       >
         <div
           className={`d-flex justify-content-center align-items-center rounded ${styles.roundedContainer}`}
@@ -20,13 +15,11 @@ const Item = ({ id, imagen, precio, titulo }) => {
           <img
             src={imagen}
             className="card-img-top img-thumbnail rounded"
-            style={{ maxHeight: "250px", maxWidth: "100%" }}
+            style={{ maxHeight: "200px", maxWidth: "100%" }} // Ajusta la altura máxima y el ancho máximo de la imagen
             alt={titulo}
           />
         </div>
-        <div
-          className={`card-body bg-dark text-white ${styles.productDetails}`}
-        >
+        <div className={`card-body ${styles.productDetails}`}>
           <h5 className={`card-title ${styles.productTitle}`}>{titulo}</h5>
           <p className={`card-text ${styles.productPrice} h4`}>${precio}</p>
           <div className="d-grid gap-2 d-flex justify-content-center align-items-center">
@@ -38,8 +31,8 @@ const Item = ({ id, imagen, precio, titulo }) => {
               <div className="d-flex align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="19"
+                  height="19"
                   fill="currentColor"
                   className="bi bi-search"
                   viewBox="0 0 16 16"
